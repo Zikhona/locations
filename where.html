@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    		<h1>location1:</h1>
+  <div id="location"></div>
+  	<button id="button">codeX</button>
+	
+			<h1>location2:</h1>
+   		<div id="location1"></div>
+   		<button id="button1">Philippi</button>
+
+	
+		<button id="clear">clear all</button>
+
+
+</body>
+		<script src="geolib.min.js"></script>
+		<script type="text/javascript">
+
+	var button = document.getElementById("button");
+	button.addEventListener("click", function () {
+
+	navigator.geolocation.getCurrentPosition(function(location){
+	var loc = document.getElementById("location");
+	var location = loc.innerHTML = location.coords.latitude + 
+	", " + location.coords.longitude;
+});
+});
+
+	var clear = document.getElementById("clear");
+	clear.addEventListener("click", function () {
+	var loc = document.getElementById("location");
+	var location = loc.innerHTML = "";
+});
+
+	var button1 = document.getElementById("button1");
+	button1.addEventListener("click", function () {
+
+	navigator.geolocation.getCurrentPosition(function(location){
+	var loc = document.getElementById("location1");
+	var location = loc.innerHTML = location.coords.latitude + 
+	", " + location.coords.longitude;
+});
+});
+
+var clear = document.getElementById("clear");
+	clear.addEventListener("click", function () {
+	var loc = document.getElementById("location1");
+	var location = loc.innerHTML = "";
+});
+
+
+</script>
+</html>
+
